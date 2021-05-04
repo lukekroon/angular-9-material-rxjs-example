@@ -18,9 +18,13 @@
 
 `cd angular-9-material-rxjs-example`
 
+### Create a branch
+
+`git checkout -b tech-assesment`
+
 ### Install dependencies
 
-`npm install`
+`npm ci`
 
 ### Run the application
 
