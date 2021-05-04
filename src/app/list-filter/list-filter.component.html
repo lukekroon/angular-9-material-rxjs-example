@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Example</mat-card-title>
+        <mat-card-subtitle>RxJs List and filter example</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <mat-slide-toggle (change)="soldFilter$.next($event.checked)">
+                Sold
+            </mat-slide-toggle>
+            <mat-slide-toggle (change)="lesThan5000Filter$.next($event.checked)">
+                Less than 5000
+            </mat-slide-toggle>
+        </div>
+
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let item of dataToShow$ | async;">
+                <mat-icon mat-list-icon *ngIf="item.sold">price_check</mat-icon>
+                <mat-icon mat-list-icon *ngIf="!item.sold">done</mat-icon>
+                <div mat-line>{{item.item}} | R{{item.price | number}}</div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

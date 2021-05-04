@@ -1,13 +1,9 @@
-<mat-card>
-	<mat-card-content>
-		<mat-slide-toggle (change)="soldFilter$.next($event.checked)">
-			Sold
-		</mat-slide-toggle>
-		<mat-slide-toggle (change)="lesThan5000Filter$.next($event.checked)">
-			Less than 5000
-		</mat-slide-toggle>
-		<mat-list role="list">
-			<mat-list-item role="listitem" *ngFor="let item of dataToShow$ | async;">{{item.item}} | R{{item.price | number}}</mat-list-item>
-		</mat-list>
-	</mat-card-content>
-</mat-card>
+<div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="15px">
+	<div>
+		<app-list-filter></app-list-filter>
+	</div>
+
+	<div>
+		<app-sales></app-sales>
+	</div>
+</div>

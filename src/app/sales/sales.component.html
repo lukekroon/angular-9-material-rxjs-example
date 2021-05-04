@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Sales</mat-card-title>
+        <mat-card-subtitle>Latest Sales</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <h3>Latest Sale 🎉</h3>
+        <div fxLayout="column" *ngIf="(latestSale$ | async) as latestSale">
+            <span>{{latestSale.product}} - R{{latestSale.price | number}}</span>
+            <span>{{latestSale.date | date: 'HH:mm:ss'}}</span>
+        </div>
+        <mat-divider>
+        </mat-divider>
+        <div fxLayout="row">
+            <div fxLayout="column">
+                <h3>Latest Sales</h3>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let sale of last10Sales$ | async;">
+                        <mat-icon mat-list-icon>price_check</mat-icon>
+                        <div mat-line>{{sale.product}} | R{{sale.price | number}}</div>
+                        <div mat-line>{{sale.date | date: 'HH:mm:ss'}}</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div fxLayout="column">
+                <h3>Top Sales</h3>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let sale of top5Sales$ | async;">
+                        <mat-icon mat-list-icon>check_circle_outline</mat-icon>
+                        <div mat-line>{{sale.product}} | R{{sale.price | number}}</div>
+                        <div mat-line>{{sale.date | date: 'HH:mm:ss'}}</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
