@@ -40,10 +40,6 @@ Use any prefered IDE. For this project we propose Visual Studio Code.
 
 Follow instructions in the following file `src/app/sales/sales.component.ts`
 
-## Goal
-
-Learn something new
-
 ## References
 
 * [Angular](https://angular.io/)
