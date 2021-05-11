@@ -19,23 +19,13 @@ export class SalesComponent implements OnInit {
   ngOnInit(): void {
     this.latestSale$ = this.salesService.getLatestSale();
 
+    // Make use of RxJs pipe operators. Do not change any code inside .html file 
+
     // TODO: Keep track of the last 10 sales
-    this.last10Sales$ = this.salesService.getLatestSale().pipe(
-      map((sale: Sale) => {
-        // Write code here 
-        return [sale]
-      }),
-      tap(console.log) // To view the logs ctrl + shift + I
-    );
+    // this.last10Sales$ = this.salesService.getLatestSale();
 
     // TODO: Keep track of the top 5 most expensive sales
-    this.top5Sales$ = this.salesService.getLatestSale().pipe(
-      map((sale: Sale) => {
-        // Write code here 
-        return [sale]
-      }),
-      tap(console.log) // To view the logs ctrl + shift + I
-    );
+    // this.top5Sales$ = this.salesService.getLatestSale();
 
   }
 

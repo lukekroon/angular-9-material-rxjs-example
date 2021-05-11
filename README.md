@@ -20,7 +20,7 @@
 
 ### Create a branch
 
-`git checkout -b tech-assesment`
+`git checkout -b example-branch`
 
 ### Install dependencies
 
