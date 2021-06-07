@@ -23,10 +23,12 @@ export class SalesComponent implements OnInit {
 
     // TODO: Keep track of the last 10 sales
     // this.last10Sales$ = this.salesService.getLatestSale();
+    this.last10Sales$.subscribe(num => this.latestSale$);
 
+  
     // TODO: Keep track of the top 5 most expensive sales
     // this.top5Sales$ = this.salesService.getLatestSale();
-
+    this.top5Sales$.subscribe(num => this.last10Sales$);
   }
 
 }
